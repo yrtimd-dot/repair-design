@@ -403,7 +403,7 @@ template {
 }
 
 html {
-  font-style: 14px;
+  font-size: 14px;
 }
 
 body {
@@ -462,6 +462,7 @@ body {
 .logo {
   color: #E3B873;
   text-transform: uppercase;
+  font-size: 1.06rem;
 }
 
 .nav__item {
@@ -519,13 +520,25 @@ body {
   margin-left: 4.28rem;
 }
 
+.hero__title {
+  margin-bottom: 1rem;
+}
+
 .hero__text {
   font-size: 1.57rem;
+  line-height: 131%;
   max-width: 500px;
+  margin: 0;
+  margin-bottom: 3rem;
 }
 
 .hero__button {
   margin-right: 20px;
+  padding: 20px 30px;
+}
+
+.hero__button-outline {
+  padding: 18px 45px;
 }
 
 .hero__instagram {
@@ -593,6 +606,7 @@ body {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
   line-height: 0.8;
+  font-size: 1.1rem;
 }
 
 .instagram__link::after {
@@ -604,10 +618,10 @@ body {
 }
 
 .title {
-  margin: 0;
   font-family: 'Yeseva One', cursive;
   text-transform: uppercase;
   font-size: 2.857rem;
+  line-height: 1.4;
 }
 
 .title--primary {
