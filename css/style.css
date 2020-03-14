@@ -458,6 +458,27 @@ template {
   margin: auto;
 }
 
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.col-30 {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+}
+
+.col-50 {
+  width: 50%;
+}
+
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -480,10 +501,50 @@ img {
   padding: 60px 0;
 }
 
+.section--dark {
+  background-color: #131313;
+  color: #ffffff;
+}
+
 .section-title {
   text-align: center;
-  text-transform: uppercase;
+}
+
+.section-title--left {
+  text-align: left;
+}
+
+.section-title__heading {
   font-family: 'Yeseva One', cursive;
+  text-transform: uppercase;
+  line-height: 138%;
+}
+
+.section-title__heading--primary {
+  color: #E3B873;
+}
+
+.section-title__word {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section-title__word::after {
+  content: '';
+  width: 90px;
+  height: 2px;
+  background-color: #E3B873;
+  margin-left: 2rem;
+}
+
+.section-title__text {
+  font-size: 1.28rem;
+  line-height: 2.07rem;
+  max-width: 31.51rem;
 }
 
 .section-title__image {
@@ -567,6 +628,9 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   padding-top: 100px;
   background: #131313 url("../img/hero-bg.jpg") no-repeat center/cover;
   height: 100vh;
@@ -581,6 +645,17 @@ img {
   width: 100%;
   height: 100%;
   background-color: rgba(19, 19, 19, 0.7);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 3.46rem;
+  background-color: #131313;
 }
 
 .hero__content {
@@ -620,6 +695,7 @@ img {
 
 .hero__scroll-down {
   position: absolute;
+  z-index: 3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -701,23 +777,6 @@ img {
   margin-bottom: 2rem;
 }
 
-.row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.col {
-  -ms-flex-preferred-size: 32%;
-      flex-basis: 32%;
-}
-
 .card__text {
   position: relative;
   max-width: 23.6rem;
@@ -757,7 +816,7 @@ img {
   padding: 1.214rem 2.6rem;
 }
 
-.section-title__text {
+.section-subtitle__text {
   margin: auto;
   margin-top: 20px;
   margin-bottom: 45px;
@@ -853,6 +912,64 @@ img {
 .modal__button {
   -ms-flex-item-align: end;
       align-self: flex-end;
+}
+
+.swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.swiper-slide__text {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  margin-bottom: 1rem;
+  padding-bottom: 2rem;
+}
+
+.swiper-slide__heading {
+  font-size: 1.285rem;
+  line-height: 1.78rem;
+  font-family: 'Yeseva One', cursive;
+  color: #E3B873;
+  text-transform: uppercase;
+  margin-bottom: 0.64rem;
+}
+
+.swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #ffffff;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  bottom: 0;
+  top: auto;
+  background-size: 42px;
+  width: 42px;
+  height: 14px;
+}
+
+.swiper-button-prev::after, .swiper-button-next::after {
+  display: none;
+}
+
+.swiper-button-prev {
+  left: 0;
+  background: url("../img/arrow-prev.svg") no-repeat center;
+}
+
+.swiper-button-next {
+  background: url("../img/arrow-next.svg") no-repeat center;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets {
+  width: auto;
+  bottom: -2px;
 }
 
 @media screen and (max-width: 1300px) {
