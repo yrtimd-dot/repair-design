@@ -1180,6 +1180,30 @@ img {
   padding: 4.285rem 0;
 }
 
+.footer__subtitle {
+  margin-bottom: 1.857rem;
+  font-family: 'Yeseva One', cursive;
+  font-size: 1.428rem;
+  text-align: center;
+  color: #E3B873;
+  text-transform: uppercase;
+}
+
+.footer__map {
+  margin: auto;
+  margin-bottom: 4rem;
+  max-width: 66.071rem;
+}
+
+.footer__icons {
+  text-align: center;
+  margin-bottom: 3.07rem;
+}
+
+.icons--left {
+  margin-left: 1.071rem;
+}
+
 @media screen and (max-width: 1300px) {
   html {
     font-size: 12px;
