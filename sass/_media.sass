@@ -22,6 +22,47 @@
   .card
     &__text
       margin-left: 0
+  .swiper-wrapper
+    &--top
+      margin-top: 2.75rem
+  .swiper-container-horizontal > .swiper-pagination-bullets
+    bottom: 0
+  .section
+    &-title__word
+      &::after
+        display: none
+  .col-50
+    width: 100%
+  .swiper-slide
+    &__heading
+      font-size: 14px
+    &__value
+      font-size: 14px
+  #ymaps1584686997383885060
+    height: 50px
+@media screen and ( max-width: 640px )
+  .control
+    background-color: $dark
+    color: $light
+    &__text
+      font-size: 14px
+    &__label
+      opacity: 0.5
+    &__input
+      &::placeholder
+        color: $light
+    &__form
+      flex-direction: column
+    &__input-group
+      margin-bottom: 5.25rem
+      &--bottom
+        margin-bottom: 0.6rem
+    &__button
+      order: 1
+      margin-top: 60px
+    &__policy
+      margin-top: 0
+  
 @media screen and ( max-width: 570px )
   .contacts
     &__phone
@@ -47,6 +88,38 @@
       &-outline
         min-width: 22.86rem
         margin-bottom: 1.85rem
+  .footer
+    background: $dark none
+    &__menu
+      width: 0
+      height: 0
+      display: none
+    &__map
+      height: 255px
+      width: 100%
+    &__wrap
+      background-color: $dark
+      width: 100%
+    &__form
+      flex-direction: column
+    &__button
+      margin: initial
+    &__subtitle
+      order: 1
+    &__icons
+      order: 2
+  .policy
+    &__label
+      justify-content: end
+  .control
+    &__video
+      min-height: 17.25rem
+    &__button
+      margin-bottom: -80px
+  .container
+    &--flex
+      display: flex
+      flex-direction: column
 @media screen and ( max-height: 520px )
   .hero
     &__scroll-down

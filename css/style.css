@@ -600,7 +600,7 @@ img {
   margin-bottom: 4.428rem;
   max-width: 58.357rem;
   min-height: 31rem;
-  background: #131313 url("../img/video-mask.jpg") no-repeat center;
+  background: #131313 url("../img/video-mask.jpg") no-repeat center/cover;
   -webkit-box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.15);
 }
@@ -633,6 +633,10 @@ img {
   border-radius: 30px;
 }
 
+.control__input {
+  color: #131313;
+}
+
 .control__form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -644,6 +648,7 @@ img {
       flex-wrap: wrap;
   max-width: 55rem;
   margin: auto;
+  color: #131313;
 }
 
 .control__input-group {
@@ -659,7 +664,7 @@ img {
 }
 
 .control__label {
-  margin-bottom: -7px;
+  margin-bottom: 7px;
 }
 
 .control__button {
@@ -1104,11 +1109,29 @@ img {
 }
 
 .footer {
-  background: #131313 url("../img/footer-bg.jpg") no-repeat center/cover;
+  position: relative;
+  background: #131313 url("../img/bg-footer.jpg") no-repeat center/cover;
   padding-top: 3rem;
 }
 
+.footer::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(19, 19, 19, 0.9);
+}
+
+.footer__menu {
+  position: relative;
+}
+
 .footer__wrap {
+  position: relative;
   background-color: #181818;
   max-width: 63.07rem;
   margin: auto;
@@ -1181,6 +1204,10 @@ img {
 }
 
 .footer__subtitle {
+  position: relative;
+  max-width: 42.07rem;
+  margin: auto;
+  font-weight: normal;
   margin-bottom: 1.857rem;
   font-family: 'Yeseva One', cursive;
   font-size: 1.428rem;
@@ -1193,11 +1220,16 @@ img {
   margin: auto;
   margin-bottom: 4rem;
   max-width: 66.071rem;
+  height: 33.21rem;
 }
 
 .footer__icons {
   text-align: center;
   margin-bottom: 3.07rem;
+}
+
+.icons {
+  position: relative;
 }
 
 .icons--left {
@@ -1241,6 +1273,73 @@ img {
   .card__text {
     margin-left: 0;
   }
+  .swiper-wrapper--top {
+    margin-top: 2.75rem;
+  }
+  .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 0;
+  }
+  .section-title__word::after {
+    display: none;
+  }
+  .col-50 {
+    width: 100%;
+  }
+  .swiper-slide__heading {
+    font-size: 14px;
+  }
+  .swiper-slide__value {
+    font-size: 14px;
+  }
+  #ymaps1584686997383885060 {
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .control {
+    background-color: #131313;
+    color: #ffffff;
+  }
+  .control__text {
+    font-size: 14px;
+  }
+  .control__label {
+    opacity: 0.5;
+  }
+  .control__input::-webkit-input-placeholder {
+    color: #ffffff;
+  }
+  .control__input:-ms-input-placeholder {
+    color: #ffffff;
+  }
+  .control__input::-ms-input-placeholder {
+    color: #ffffff;
+  }
+  .control__input::placeholder {
+    color: #ffffff;
+  }
+  .control__form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .control__input-group {
+    margin-bottom: 5.25rem;
+  }
+  .control__input-group--bottom {
+    margin-bottom: 0.6rem;
+  }
+  .control__button {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    margin-top: 60px;
+  }
+  .control__policy {
+    margin-top: 0;
+  }
 }
 
 @media screen and (max-width: 570px) {
@@ -1273,6 +1372,61 @@ img {
   .hero__button-outline {
     min-width: 22.86rem;
     margin-bottom: 1.85rem;
+  }
+  .footer {
+    background: #131313 none;
+  }
+  .footer__menu {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+  .footer__map {
+    height: 255px;
+    width: 100%;
+  }
+  .footer__wrap {
+    background-color: #131313;
+    width: 100%;
+  }
+  .footer__form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footer__button {
+    margin: initial;
+  }
+  .footer__subtitle {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .footer__icons {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .policy__label {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+  }
+  .control__video {
+    min-height: 17.25rem;
+  }
+  .control__button {
+    margin-bottom: -80px;
+  }
+  .container--flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
