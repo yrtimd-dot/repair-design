@@ -39,6 +39,14 @@
       .policy__label
         &::before
           background: $primary url('../img/check.svg') no-repeat center / 0.8rem
+.policy
+  &__checkbox
+    opacity: 0
+    visibility: hidden
+    &:checked + .invalid +
+      .policy__label
+        &::before
+          background: $primary url('../img/check.svg') no-repeat center / 0.8rem
   &__label
     display: flex
     align-items: center
@@ -58,3 +66,13 @@ label.invalid
 input
   &.invalid
     border-bottom: 1px solid tomato
+.policy
+  display: flex
+  flex-wrap: wrap
+.invalid 
+  width: 100%
+  order: 1
+.policy__checkbox
+  width: .0
+.policy__label
+  margin-bottom: 15px

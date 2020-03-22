@@ -12,6 +12,10 @@
       display: none
     &__content
       margin-left: 0
+  .button
+    &--primary
+      &:hover
+        box-shadow: 0px 5px 15px rgba($primary, 0.2)
 @media screen and ( max-width: 760px  )
   .row
     flex-direction: column
@@ -49,6 +53,7 @@
     &__label
       opacity: 0.5
     &__input
+      color: $light
       &::placeholder
         color: $light
     &__form
@@ -62,7 +67,7 @@
       margin-top: 60px
     &__policy
       margin-top: 0
-  
+      color: $light
 @media screen and ( max-width: 570px )
   .contacts
     &__phone
@@ -88,6 +93,8 @@
       &-outline
         min-width: 22.86rem
         margin-bottom: 1.85rem
+    &::after
+      display: none
   .footer
     background: $dark none
     &__menu
@@ -123,4 +130,20 @@
 @media screen and ( max-height: 520px )
   .hero
     &__scroll-down
+      display: none
+@media screen and ( max-height: 500px )
+  .modal
+    &__dialog
+      max-width: 31.26rem
+    &__input-group
+      margin-bottom: 0.428rem
+    &__title
+      margin-bottom: 0.428rem
+      font-size: 1.157rem
+    &__policy
+      margin-bottom: 0.7rem
+  .hero
+    &::after
+      display: none
+    &__button, &__button-outline
       display: none

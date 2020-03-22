@@ -12,7 +12,6 @@
   closeBtn.addEventListener('click', switchModal);
 
 }); */
-
 $(document).ready(function () {
   var modal = $('.modal'),
       modalBtn = $('[data-toggle=modal]'),
@@ -21,9 +20,26 @@ $(document).ready(function () {
   modalBtn.on('click', function () {
     modal.toggleClass('modal--visible');
   });
+
   closeBtn.on('click', function () {
     modal.toggleClass('modal--visible');
   });
+
+  $(document).on('click', function (e) {
+    console.log($(e.target).attr('class') == 'modal modal--visible')
+    if(($(e.target).attr('class') == 'modal modal--visible')) {
+      modal.removeClass('modal--visible');
+    }
+    
+  });
+
+  $(document).keydown(function (e) { 
+    if(e.key == 'Escape') {
+      modal.removeClass('modal--visible')
+    }
+  });
+
+
 
   var mySwiper = new Swiper ('.swiper-container', {
     loop: true,
@@ -36,7 +52,6 @@ $(document).ready(function () {
       prevEl: '.swiper-button-prev',
     },
   })
-
   var next = $('.swiper-button-next');
   var prev = $('.swiper-button-prev');
   var bullets = $('.swiper-pagination');
@@ -55,6 +70,7 @@ $(document).ready(function () {
         required: true,
         minlength: 2
       },
+      policyCheckbox: "required",
       userPhone: "required",
       // правило-объект (блок)
       userEmail: {
@@ -63,6 +79,7 @@ $(document).ready(function () {
       }
     }, // сообщения 
     messages: {
+      policyCheckbox: 'Соглашение обязательно',
       userName: {
         required: "Имя обязательно",
         minlength: "Имя не короче двух букв"
@@ -72,6 +89,19 @@ $(document).ready(function () {
         required: "Обязательно укажите email",
         email: "Введите в формате: name@domain.com"
       }
+    },
+    submitHandler: function(form) {
+      $.ajax({
+        type: "POST",
+        url: "send.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log('Ajax сработал. Ответ сервера: ' + response);
+          alert('Форма отправлена, мы свяжемся с вами через 10 минут');
+          $(form)[0].reset();
+          modal.removeClass('modal--visible');
+        }
+      });
     }
   });
 
@@ -79,6 +109,7 @@ $(document).ready(function () {
     errorClass: "invalid",
     rules: {
       // строчное правило
+      policyCheckbox: "required",
       userName: {
         required: true,
         minlength: 2
@@ -91,17 +122,32 @@ $(document).ready(function () {
       }
     }, // сообщения 
     messages: {
+      policyCheckbox: 'Соглашение обязательно',
       userName: {
         required: "Имя обязательно",
         minlength: "Имя не короче двух букв"
       },
       userPhone: "Телефон обязателен",
+    },
+    submitHandler: function(form) {
+      $.ajax({
+        type: "POST",
+        url: "send.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log('Ajax сработал. Ответ сервера: ' + response);
+          alert('Форма отправлена, мы свяжемся с вами через 10 минут');
+          $(form)[0].reset();
+          modal.removeClass('modal--visible');
+        }
+      });
     }
   });
 
   $('.footer__form').validate({
     errorClass: "invalid",
     rules: {
+      policyCheckbox: "required",
       // строчное правило
       userName: {
         required: true,
@@ -112,12 +158,26 @@ $(document).ready(function () {
       // правило-объект (блок)
     }, // сообщения 
     messages: {
+      policyCheckbox: 'Соглашение обязательно',
       userName: {
         required: "Имя обязательно",
         minlength: "Имя не короче двух букв"
       },
       userPhone: "Телефон обязателен",
       userQuestion: "Вопрос обязателен"
+    },
+    submitHandler: function(form) {
+      $.ajax({
+        type: "POST",
+        url: "send.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log('Ajax сработал. Ответ сервера: ' + response);
+          alert('Форма отправлена, мы свяжемся с вами через 10 минут');
+          $(form)[0].reset();
+          modal.removeClass('modal--visible');
+        }
+      });
     }
   });
 
