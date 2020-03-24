@@ -26,11 +26,9 @@ $(document).ready(function () {
   });
 
   $(document).on('click', function (e) {
-    console.log($(e.target).attr('class') == 'modal modal--visible')
     if(($(e.target).attr('class') == 'modal modal--visible')) {
       modal.removeClass('modal--visible');
     }
-    
   });
 
   $(document).keydown(function (e) { 
@@ -38,8 +36,6 @@ $(document).ready(function () {
       modal.removeClass('modal--visible')
     }
   });
-
-
 
   var mySwiper = new Swiper ('.swiper-container', {
     loop: true,
@@ -184,5 +180,24 @@ $(document).ready(function () {
   // маска для телефона
 
   $('[type=tel]').mask('+7(000) 00-00-000', {placeholder: "+7 (___) __-__-___"});
+
+
+YaMapsShown = false; 
+
+$(window).scroll(function() {
+  if (!YaMapsShown){
+    if($(window).scrollTop() + $(window).height() > $(document).height() - 700) {      
+    showYaMaps();
+    YaMapsShown = true;
+    }
+  }
+});
+
+function showYaMaps() {
+ var script   = document.createElement("script");
+ script.type  = "text/javascript";
+ script.src   = "https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aa79203d7321bb867f84b3e6f50b162607054f46999503ad7d649b42a237e4423&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=false"
+ document.getElementById("YaMaps").appendChild(script);
+}
 
 });
