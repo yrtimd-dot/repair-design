@@ -637,6 +637,18 @@ label.invalid {
   width: auto;
 }
 
+#upbutton {
+  background: url("/images/up.png") no-repeat top left;
+  height: 60px;
+  width: 60px;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+  display: none;
+  position: fixed;
+  z-index: 999;
+}
+
 .control__section-title {
   margin-bottom: 2.214rem;
   margin-top: -30rem;
@@ -739,6 +751,7 @@ label.invalid {
 .video__play {
   position: relative;
   margin: auto;
+  cursor: pointer;
 }
 
 .header {
@@ -1100,6 +1113,7 @@ label.invalid {
 }
 
 .projects {
+  background: url("../img/lines.png") no-repeat center/cover, url("../img/city-1.png") no-repeat bottom left, url("../img/city-2.png") no-repeat bottom right, #131313;
   padding-bottom: 30rem;
 }
 
@@ -1181,6 +1195,10 @@ label.invalid {
 
 .footer__menu {
   position: relative;
+}
+
+.footer__phone {
+  text-decoration: none;
 }
 
 .footer__wrap {
@@ -1479,7 +1497,7 @@ label.invalid {
             justify-content: end;
   }
   .control__video {
-    min-height: 17.25rem;
+    min-height: 25rem;
   }
   .control__button {
     margin-bottom: -80px;
@@ -1493,10 +1511,20 @@ label.invalid {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .projects {
+    background: #131313;
+  }
+  #upbutton {
+    width: 0;
+    height: 0;
+  }
 }
 
 @media screen and (max-height: 520px) {
   .hero__scroll-down {
+    display: none;
+  }
+  .hero::after {
     display: none;
   }
 }
@@ -1519,6 +1547,12 @@ label.invalid {
     display: none;
   }
   .hero__button, .hero__button-outline {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1600px) and (max-height: 625px) {
+  .hero__scroll-down {
     display: none;
   }
 }

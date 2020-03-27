@@ -120,16 +120,23 @@
       justify-content: end
   .control
     &__video
-      min-height: 17.25rem
+      min-height: 25rem
     &__button
       margin-bottom: -80px
   .container
     &--flex
       display: flex
       flex-direction: column
+  .projects
+    background: $dark
+  #upbutton
+    width: 0
+    height: 0
 @media screen and ( max-height: 520px )
   .hero
     &__scroll-down
+      display: none
+    &::after
       display: none
 @media screen and ( max-height: 500px )
   .modal
@@ -147,3 +154,8 @@
       display: none
     &__button, &__button-outline
       display: none
+@media screen and ( max-width: 1600px ) and ( max-height: 625px )
+  .hero
+    &__scroll-down
+      display: none
+  
